@@ -45,7 +45,7 @@ public class GridDStar extends DStarLite<IntCoord> {
     /**
      * The map over which searches will be performed.
      */
-    GridMap _map;
+    protected GridMap _map;
 
     /**
      * Instantiates A* search over the given map.
@@ -103,10 +103,10 @@ public class GridDStar extends DStarLite<IntCoord> {
             return Double.POSITIVE_INFINITY;
         } else {
             double cA = _map.get(a.getInts());
-            if (cA < 0) return Double.POSITIVE_INFINITY;
+            if (cA == 0) return Double.POSITIVE_INFINITY;
 
             double cB = _map.get(b.getInts());
-            if (cB < 0) return Double.POSITIVE_INFINITY;
+            if (cB == 0) return Double.POSITIVE_INFINITY;
 
             double cost = (cA + cB)/2.0 + 1.0;
             if (cost <= 0) {

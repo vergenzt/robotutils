@@ -166,11 +166,11 @@ public class MapPanel extends JPanel {
     public void setIcon(String name, Image img, Rectangle2D bounds) {
         MapIcon mi = getIcon(name);
         mi.icon = img;
-        
-        mi.xform.setToIdentity();
-        mi.xform.translate(bounds.getX(), bounds.getY());
-        mi.xform.scale(bounds.getWidth(), bounds.getHeight());
-        mi.xform.scale(1.0/img.getWidth(null), 1.0/img.getHeight(null));
+
+//        mi.xform.setToIdentity();
+//        mi.xform.translate(bounds.getX(), bounds.getY());
+//        mi.xform.scale(bounds.getWidth(), bounds.getHeight());
+//        mi.xform.scale(1.0/img.getWidth(null), 1.0/img.getHeight(null));
         this.repaint();
     }
 
@@ -282,8 +282,8 @@ public class MapPanel extends JPanel {
 
         g.setColor(ms.color);
         g.setStroke(ms.stroke);
-        g.draw(ms.shape);
-        
+        g.fill(ms.shape);
+
         g.setStroke(s);
         g.setColor(c);
     }
